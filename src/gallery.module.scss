@@ -1,0 +1,10 @@
+@import "../styles/breakpoints";
+
+.host {
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$grid-gutter / 2;
+    justify-content: center;
+  }
+}

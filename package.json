@@ -1,0 +1,7 @@
+{
+  "name": "ui",
+  "version": "0.0.1",
+  "description": "UI components",
+  "main": "index.js",
+  "license": "MIT"
+}

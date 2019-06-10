@@ -1,0 +1,64 @@
+.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    margin: 0;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  .button {
+    position: absolute;
+    background-color: rgb(45, 193, 230);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    z-index: 999;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(19, 156, 190);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .prev-button {
+    left: 0;
+    background-image: url("../images/left-icon.svg");
+  }
+
+  .next-button {
+    right: 0;
+    background-image: url("../images/right-icon.svg");
+  }
+
+  .close-button {
+    right: 0;
+    top: 0;
+    background-image: url("../images/close-icon.svg");
+  }
+}
