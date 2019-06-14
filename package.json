@@ -1,7 +1,17 @@
 {
-  "name": "ui",
+  "name": "gatsby-theme-ui_old",
   "version": "0.0.1",
   "description": "UI components",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gatsby": "^2.9.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.9.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }

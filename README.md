@@ -1,1 +1,1 @@
-# gatsby-ui-components
+# gatsby-theme-ui

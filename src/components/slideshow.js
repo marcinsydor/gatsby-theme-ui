@@ -39,22 +39,23 @@ const Slideshow = props => {
 
   return (
     <div
-      className={`${styles.host} ${isRollOver ? styles.inactive : ""} ${props.className}`}
+      className={`${styles.host} ${isRollOver ? styles.inactive : ""} ${
+        props.className
+      }`}
       onMouseOver={() => setIsRollOver(true)}
       onMouseLeave={() => setIsRollOver(false)}
     >
       <ul className={styles.slider}>
         {images.map((image, index) => {
-          const { url, title } = image;
+          const { url } = image;
           return (
             <li
               className={`${styles.slide} ${
                 currentIndex === index ? styles.visible : ""
               }`}
               key={index}
-            >
-              <img alt={title} src={url} />
-            </li>
+              style={{ backgroundImage: `url(${url})` }}
+            />
           );
         })}
       </ul>
@@ -66,6 +67,20 @@ const Slideshow = props => {
         className={`${styles.button} ${styles.nextButton}`}
         onClick={() => showSlide(currentIndex + 1)}
       />
+
+      <ul className={styles.bulletBar}>
+        {images.map((image, index) => {
+          return (
+            <li
+              className={`${styles.bullet} ${
+                currentIndex === index ? styles.selected : ""
+              }`}
+              key={index}
+              onClick={() => showSlide(index)}
+            ></li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
