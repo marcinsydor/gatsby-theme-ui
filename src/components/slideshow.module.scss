@@ -1,3 +1,5 @@
+@import "_theme";
+
 .host {
   position: relative;
   width: 100%;
@@ -27,9 +29,10 @@
     }
   }
 
-  .button {
+  .prev-button,
+  .next-button {
     position: absolute;
-    background-color: brown;
+    background-color: $primary;
     width: 40px;
     height: 40px;
     top: calc(50% - 20px);
@@ -37,7 +40,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: rgb(141, 31, 31);
+      background-color: $secondary;
     }
 
     &:active {

@@ -1,0 +1,12 @@
+@import "_theme";
+
+.host {
+  background: $primary;
+  padding: 5px;
+  cursor: pointer;
+  color: $primary-color;
+  
+  &:hover {
+      background: $secondary;
+  } 
+}

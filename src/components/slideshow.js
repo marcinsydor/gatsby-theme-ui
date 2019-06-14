@@ -1,8 +1,10 @@
+import cn from "classnames";
 import React, { useEffect, useState } from "react";
 import styles from "./slideshow.module.scss";
+import theme from "./slideshow.theme.module.scss";
 
 const Slideshow = props => {
-  const { images, classes = {} } = props;
+  const { images } = props;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [counter, setCounter] = useState(0);
   const [isRollOver, setIsRollOver] = useState(false);
@@ -39,9 +41,7 @@ const Slideshow = props => {
 
   return (
     <div
-      className={`${styles.host} ${isRollOver ? styles.inactive : ""} ${
-        props.className
-      }`}
+      className={cn(styles.host, isRollOver ? styles.inactive : "", theme.host)}
       onMouseOver={() => setIsRollOver(true)}
       onMouseLeave={() => setIsRollOver(false)}
     >
@@ -50,9 +50,11 @@ const Slideshow = props => {
           const { url } = image;
           return (
             <li
-              className={`${styles.slide} ${
-                currentIndex === index ? styles.visible : ""
-              }`}
+              className={cn(
+                styles.slide,
+                currentIndex === index ? styles.visible : "",
+                theme.slide
+              )}
               key={index}
               style={{ backgroundImage: `url(${url})` }}
             />
@@ -60,26 +62,26 @@ const Slideshow = props => {
         })}
       </ul>
       <div
-        className={`${styles.button} ${styles.prevButton} ${classes.prevButton}`}
+        className={cn(styles.prevButton, theme.prevButton)}
         onClick={() => showSlide(currentIndex - 1)}
       />
       <div
-        className={`${styles.button} ${styles.nextButton}`}
+        className={cn(styles.nextButton, styles.nextButton)}
         onClick={() => showSlide(currentIndex + 1)}
       />
 
       <ul className={styles.bulletBar}>
-        {images.map((image, index) => {
-          return (
-            <li
-              className={`${styles.bullet} ${
-                currentIndex === index ? styles.selected : ""
-              }`}
-              key={index}
-              onClick={() => showSlide(index)}
-            ></li>
-          );
-        })}
+        {images.map((image, index) => (
+          <li
+            className={cn(
+              styles.bullet,
+              currentIndex === index ? styles.selected : "",
+              theme.bullet
+            )}
+            key={index}
+            onClick={() => showSlide(index)}
+          ></li>
+        ))}
       </ul>
     </div>
   );

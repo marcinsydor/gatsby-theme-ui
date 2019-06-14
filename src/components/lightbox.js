@@ -1,6 +1,8 @@
+import cn from "classnames";
 import React, { useState } from "react";
 import useEnter from "../hooks/enter.hook";
 import styles from "./lightbox.module.scss";
+import theme from "./lightbox.theme.module.scss";
 import Loader from "./loader";
 
 const Lightbox = props => {
@@ -37,8 +39,12 @@ const Lightbox = props => {
     setLoading(false);
   };
 
+  // const enterClass = styles.enter;
+
   return (
-    <div className={`${styles.root} ${enter ? styles.enter : ""}`}>
+    <div
+      className={cn(styles.Lightbox, enter ? styles.enter : "", theme.Lightbox)}
+    >
       <img
         className={styles.hiddenImage}
         alt={currentImage.title}
@@ -48,25 +54,25 @@ const Lightbox = props => {
       />
 
       <div
-        className={`${styles.image} ${!loading ? styles.visible : ""}`}
+        className={cn(styles.image, !loading ? styles.visible : "")}
         style={{ backgroundImage: `url(${currentImage.url})` }}
       />
 
-      <div className={`${styles.loader} ${loading ? styles.visible : ""}`}>
+      <div className={cn(styles.loader, loading ? styles.visible : "")}>
         <Loader />
       </div>
 
       <div
-        className={`${styles.button} ${styles.prevButton}`}
+        className={cn(styles.button, styles.prevButton)}
         onClick={() => showImage(currentIndex - 1)}
       />
       <div
-        className={`${styles.button} ${styles.nextButton}`}
+        className={cn(styles.button, styles.nextButton)}
         onClick={() => showImage(currentIndex + 1)}
       />
 
       <div
-        className={`${styles.button} ${styles.closeButton}`}
+        className={cn(styles.button, styles.closeButton)}
         onClick={() => {
           props.toggleLightbox();
         }}
