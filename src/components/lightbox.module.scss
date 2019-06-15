@@ -1,3 +1,5 @@
+@import "theme";
+
 .Lightbox {
   position: fixed;
   top: 0;
@@ -66,7 +68,7 @@
 
   .button {
     position: absolute;
-    background-color: rgb(45, 193, 230);
+    background-color: $primary;
     background-position: center center;
     background-repeat: no-repeat;
     width: 40px;
@@ -77,7 +79,7 @@
     background-size: contain;
 
     &:hover {
-      background-color: rgb(19, 156, 190);
+      background-color: $secondary;
     }
 
     &:active {
@@ -87,17 +89,17 @@
 
   .prev-button {
     left: 0;
-    // background-image: url("../images/left-icon.svg");
+    background-image: url("../images/left-icon.svg");
   }
 
   .next-button {
     right: 0;
-    // background-image: url("../images/right-icon.svg");
+    background-image: url("../images/right-icon.svg");
   }
 
   .close-button {
     right: 0;
     top: 0;
-    // background-image: url("../images/close-icon.svg");
+    background-image: url("../images/close-icon.svg");
   }
 }
