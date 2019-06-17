@@ -41,7 +41,9 @@
   .prev-button,
   .next-button {
     position: absolute;
-    background-color: $primary;
+    background-color: $s-color;
+    background-repeat: no-repeat;
+    background-position: center center;
     width: 40px;
     height: 40px;
     top: calc(50% - 20px);
@@ -49,7 +51,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: $secondary;
+      background-color: $sl-color;
     }
 
     &:active {
@@ -59,10 +61,12 @@
 
   .prev-button {
     left: 0;
+    background-image: url("../images/left-icon.svg");
   }
-
+  
   .next-button {
     right: 0;
+    background-image: url("../images/right-icon.svg");
   }
 
   .bullet-bar {

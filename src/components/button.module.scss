@@ -1,12 +1,13 @@
-@import "_theme";
+@import "theme";
 
 .host {
-  background: $primary;
+  background: $s-color;
+  color: $s-font-color;
   padding: 5px;
   cursor: pointer;
-  color: $primary-color;
-  
+  text-decoration: none;
+
   &:hover {
-      background: $secondary;
-  } 
+    background: $sl-color;
+  }
 }

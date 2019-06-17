@@ -1,8 +1,7 @@
 import cn from "classnames";
 import React, { useState } from "react";
 import useEnter from "../hooks/enter.hook";
-import styles from "./lightbox.module.scss";
-import theme from "./lightbox.theme.module.scss";
+import styles from "./lightbox.theme.module.scss";
 import Loader from "./loader";
 
 const Lightbox = props => {
@@ -42,9 +41,7 @@ const Lightbox = props => {
   // const enterClass = styles.enter;
 
   return (
-    <div
-      className={cn(styles.Lightbox, enter ? styles.enter : "", theme.Lightbox)}
-    >
+    <div className={cn(styles.host, enter ? styles.enter : "")}>
       <img
         className={styles.hiddenImage}
         alt={currentImage.title}

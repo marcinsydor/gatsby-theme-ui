@@ -1,7 +1,6 @@
 import cn from "classnames";
 import React, { useEffect, useState } from "react";
-import styles from "./slideshow.module.scss";
-import theme from "./slideshow.theme.module.scss";
+import styles from "./slideshow.theme.module.scss";
 
 const Slideshow = props => {
   const { images } = props;
@@ -41,7 +40,7 @@ const Slideshow = props => {
 
   return (
     <div
-      className={cn(styles.host, isRollOver ? styles.inactive : "", theme.host)}
+      className={cn(styles.host, isRollOver ? styles.inactive : "")}
       onMouseOver={() => setIsRollOver(true)}
       onMouseLeave={() => setIsRollOver(false)}
     >
@@ -52,8 +51,7 @@ const Slideshow = props => {
             <li
               className={cn(
                 styles.slide,
-                currentIndex === index ? styles.visible : "",
-                theme.slide
+                currentIndex === index ? styles.visible : ""
               )}
               key={index}
               style={{ backgroundImage: `url(${url})` }}
@@ -62,11 +60,11 @@ const Slideshow = props => {
         })}
       </ul>
       <div
-        className={cn(styles.prevButton, theme.prevButton)}
+        className={cn(styles.prevButton)}
         onClick={() => showSlide(currentIndex - 1)}
       />
       <div
-        className={cn(styles.nextButton, styles.nextButton)}
+        className={cn(styles.nextButton)}
         onClick={() => showSlide(currentIndex + 1)}
       />
 
@@ -75,8 +73,7 @@ const Slideshow = props => {
           <li
             className={cn(
               styles.bullet,
-              currentIndex === index ? styles.selected : "",
-              theme.bullet
+              currentIndex === index ? styles.selected : ""
             )}
             key={index}
             onClick={() => showSlide(index)}
