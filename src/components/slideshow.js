@@ -1,6 +1,7 @@
 import cn from "classnames";
 import React, { useEffect, useState } from "react";
 import styles from "./slideshow.theme.module.scss";
+import { StyledWrapper, Slider, Slide, Button } from "./slideshow.styles.";
 
 const Slideshow = props => {
   const { images } = props;
@@ -39,34 +40,24 @@ const Slideshow = props => {
   };
 
   return (
-    <div
-      className={cn(styles.host, isRollOver ? styles.inactive : "")}
+    <StyledWrapper
       onMouseOver={() => setIsRollOver(true)}
       onMouseLeave={() => setIsRollOver(false)}
     >
-      <ul className={styles.slider}>
+      <Slider>
         {images.map((image, index) => {
           const { url } = image;
           return (
-            <li
-              className={cn(
-                styles.slide,
-                currentIndex === index ? styles.visible : ""
-              )}
+            <Slide
+              visible={currentIndex === index}
               key={index}
               style={{ backgroundImage: `url(${url})` }}
             />
           );
         })}
-      </ul>
-      <div
-        className={cn(styles.prevButton)}
-        onClick={() => showSlide(currentIndex - 1)}
-      />
-      <div
-        className={cn(styles.nextButton)}
-        onClick={() => showSlide(currentIndex + 1)}
-      />
+      </Slider>
+      <Button onClick={() => showSlide(currentIndex - 1)} />
+      <Button isFlipped onClick={() => showSlide(currentIndex + 1)} />
 
       <ul className={styles.bulletBar}>
         {images.map((image, index) => (
@@ -80,7 +71,7 @@ const Slideshow = props => {
           ></li>
         ))}
       </ul>
-    </div>
+    </StyledWrapper>
   );
 };
 

@@ -1,13 +1,8 @@
-import cn from "classnames";
 import React from "react";
-import styles from "./button.module.scss";
+import { StyledWarpper } from "./button.styles";
 
 export default props => (
-  <a
-    className={cn(styles.host, props.className)}
-    href={props.href || "#"}
-    onClick={props.onClick}
-  >
+  <StyledWarpper href={props.href || "#"} onClick={props.onClick}>
     {props.children}
-  </a>
+  </StyledWarpper>
 );

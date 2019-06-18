@@ -8,11 +8,15 @@
     "gatsby": "^2.9.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "gatsby-plugin-styled-components": "^3.0.7"
   },
   "peerDependencies": {
     "gatsby": "^2.9.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "styled-components": "^4.3.1"
   }
 }
