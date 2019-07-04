@@ -1,0 +1,30 @@
+@import "theme";
+@import "../styles/breakpoints";
+
+.host {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: $primary;
+  min-height: 45px;
+  display: grid;
+  grid-template-columns: minmax(auto, $lg);
+  padding: 10px $gutter 10px $gutter;
+  justify-content: center;
+
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+  transform: translateY(-100px);
+
+  &.enter {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../styles/breakpoints";
+
+.host {
+  display: grid;
+  grid-template-columns: minmax(auto, $lg);
+  padding: 30px $gutter 30px $gutter;
+  background-size: cover;
+  background-position: center center;
+  min-height: 10px;
+  justify-content: center;
+
+  &.compact {
+    max-width: $lg;
+    margin: 0 auto;
+  }
+
+  &.content-full-width {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    padding-right: 0;
+    // align-items: center;
+  }
+}

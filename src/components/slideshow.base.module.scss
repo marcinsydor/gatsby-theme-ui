@@ -1,0 +1,90 @@
+@import "theme";
+
+.host {
+  position: relative;
+  width: 100%;
+
+  .slider {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    .slide {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0;
+
+      transition-property: opacity;
+      transition-duration: 1s;
+
+      &.visible {
+        opacity: 1;
+      }
+    }
+  }
+
+  .prev-button,
+  .next-button {
+    position: absolute;
+    background-color: $secondary;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    z-index: 999;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-light;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .prev-button {
+    left: 0;
+    background-image: url("../images/left-icon.svg");
+  }
+
+  .next-button {
+    right: 0;
+    background-image: url("../images/right-icon.svg");
+  }
+
+  .bullet-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+
+    .bullet {
+      width: 12px;
+      height: 12px;
+      background-color: white;
+      opacity: 0.8;
+      cursor: pointer;
+      margin: 0 6px;
+      border-radius: 6px;
+
+      &.selected {
+        background-color: grey;
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+  }
+}
