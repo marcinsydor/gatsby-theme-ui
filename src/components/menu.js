@@ -8,7 +8,7 @@ const Menu = props => {
   const { links } = props;
   const linkElements = links.map((item, index) => (
     <li className={styles.link} key={index}>
-      <Link to={item.url}>{item.name}</Link>
+      <Link to={item.slug}>{item.title}</Link>
     </li>
   ));
 

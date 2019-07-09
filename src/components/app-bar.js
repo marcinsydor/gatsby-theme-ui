@@ -2,9 +2,9 @@ import cn from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import useEnter from "../hooks/enter.hook";
-import styles from "./header.module.scss";
+import styles from "./app-bar.module.scss";
 
-const Header = props => {
+const AppBar = props => {
   const enter = useEnter();
 
   return (
@@ -14,12 +14,12 @@ const Header = props => {
   );
 };
 
-Header.propTypes = {
+AppBar.propTypes = {
   siteTitle: PropTypes.string
 };
 
-Header.defaultProps = {
+AppBar.defaultProps = {
   siteTitle: ``
 };
 
-export default Header;
+export default AppBar;
