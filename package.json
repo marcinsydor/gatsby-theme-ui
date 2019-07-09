@@ -4,11 +4,13 @@
   "description": "UI components",
   "main": "index.js",
   "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
   "devDependencies": {
     "gatsby": "2.9.10",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "classnames": "^2.2.6"
+    "react-dom": "^16.8.6"
   },
   "peerDependencies": {
     "gatsby": "2.9.10",
