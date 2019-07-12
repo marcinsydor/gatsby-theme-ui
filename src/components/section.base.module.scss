@@ -9,6 +9,7 @@
   min-height: 10px;
   justify-content: center;
 
+
   &.compact {
     max-width: $lg;
     margin: 0 auto;
@@ -20,4 +21,13 @@
     padding-right: 0;
     // align-items: center;
   }
+
+  &.center-horizontally {
+    justify-content: center;
+
+  }
+  &.center-vertically {
+      align-items: center;
+  }
+    
 }
