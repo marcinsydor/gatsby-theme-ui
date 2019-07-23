@@ -5,7 +5,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "gatsby-plugin-sharp": "^2.2.9",
+    "gatsby-transformer-sharp": "^2.2.4",
+    "gatsby-background-image": "^0.8.0"
   },
   "devDependencies": {
     "gatsby": "2.9.10",

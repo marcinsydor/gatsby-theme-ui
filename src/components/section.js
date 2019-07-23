@@ -1,4 +1,5 @@
 import cn from "classnames";
+import BackgroundImage from "gatsby-background-image";
 import React from "react";
 import styles from "./section.module.scss";
 
@@ -11,7 +12,8 @@ const Section = props => {
     height,
     compact,
     fullWidth,
-    contentFullWidth
+    contentFullWidth,
+    fluid
   } = props;
 
   const customStyles = {
@@ -21,7 +23,9 @@ const Section = props => {
   };
 
   return (
-    <section
+    <BackgroundImage
+      Tag="section"
+      fluid={fluid}
       style={customStyles}
       className={cn(
         styles.host,
@@ -30,9 +34,10 @@ const Section = props => {
         fullWidth ? styles.fullWidth : null,
         contentFullWidth ? styles.contentFullWidth : null
       )}
+      backgroundColor={`#040e18`}
     >
       {children}
-    </section>
+    </BackgroundImage>
   );
 };
 
