@@ -22,7 +22,7 @@ const Section = props => {
     ...(height && { minHeight: height })
   };
 
-  return (
+  return fluid ? (
     <BackgroundImage
       Tag="section"
       fluid={fluid}
@@ -34,10 +34,22 @@ const Section = props => {
         fullWidth ? styles.fullWidth : null,
         contentFullWidth ? styles.contentFullWidth : null
       )}
-      backgroundColor={`#040e18`}
     >
       {children}
     </BackgroundImage>
+  ) : (
+    <section
+      style={customStyles}
+      className={cn(
+        styles.host,
+        styles[type],
+        compact ? styles.compact : null,
+        fullWidth ? styles.fullWidth : null,
+        contentFullWidth ? styles.contentFullWidth : null
+      )}
+    >
+      {children}
+    </section>
   );
 };
 
