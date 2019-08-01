@@ -1,6 +1,7 @@
 @import "../styles/breakpoints";
 
 .host {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(auto, $lg);
   padding: 30px $gutter 30px $gutter;
@@ -8,6 +9,15 @@
   background-position: center center;
   min-height: 10px;
   justify-content: center;
+
+  &.content {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.slideshow {
+    padding: 0;
+  }
 
   &.compact {
     max-width: $lg;
@@ -21,10 +31,4 @@
     // align-items: center;
   }
 
-  &.center-horizontally {
-    justify-content: center;
-  }
-  &.center-vertically {
-    align-items: center;
-  }
 }
