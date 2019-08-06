@@ -6,7 +6,7 @@ import styles from "./section.module.scss";
 const Section = props => {
   const {
     children,
-    key,
+    index,
     backgroundColor,
     type,
     height,
@@ -35,7 +35,7 @@ const Section = props => {
 
   return fluid ? (
     <BackgroundImage
-      key={key}
+      key={index}
       Tag="section"
       fluid={fluid}
       style={customStyles}

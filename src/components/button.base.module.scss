@@ -2,13 +2,19 @@
 
 .host {
   background-color: $secondary;
-  color: $primary-text;
-  padding: 5px;
-  cursor: pointer;
-  text-decoration: none;
   color: $secondary-text;
+  padding: 10px;
 
   &:hover {
     background-color: $secondary-light;
+    text-decoration: none;
+  }
+
+  &.primary {
+    background-color: $primary;
+    color: $primary-text;
+    &:hover {
+      background-color: $primary-light;
+    }
   }
 }
