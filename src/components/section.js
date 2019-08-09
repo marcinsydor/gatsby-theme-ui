@@ -9,7 +9,6 @@ const Section = props => {
     index,
     backgroundColor,
     type,
-    height,
     compact,
     fullWidth,
     contentFullWidth,
@@ -18,8 +17,7 @@ const Section = props => {
   } = props;
 
   const customStyles = {
-    ...(backgroundColor && { backgroundColor: backgroundColor }),
-    ...(height && { minHeight: height })
+    ...(backgroundColor && { backgroundColor: backgroundColor })
   };
 
   // TOOD fix section random class

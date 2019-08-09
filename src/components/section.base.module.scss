@@ -17,18 +17,12 @@
 
   &.slideshow {
     padding: 0;
+    grid-template-columns: 1fr;
+    min-height: 500px;
   }
 
   &.compact {
     max-width: $lg;
     margin: 0 auto;
   }
-
-  &.content-full-width {
-    grid-template-columns: 1fr;
-    padding-left: 0;
-    padding-right: 0;
-    // align-items: center;
-  }
-
 }
