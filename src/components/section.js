@@ -20,11 +20,14 @@ const Section = props => {
     ...(backgroundColor && { backgroundColor: backgroundColor })
   };
 
+  //TODO create utility function in utils folder
+  const toCamelcase = value => value.replace(/_\w/g, m => m[1].toUpperCase());
+
   // TOOD fix section random class
   const classNames = cn(
     styles.host,
     `section${Math.floor(Math.random() * 1000)}`,
-    `${styles[type]}`,
+    `${styles[toCamelcase(type)]}`,
     compact ? styles.compact : null,
     fullWidth ? styles.fullWidth : null,
     contentFullWidth ? styles.contentFullWidth : null,
